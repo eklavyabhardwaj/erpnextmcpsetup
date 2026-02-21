@@ -34,8 +34,8 @@ ERPNext Database
 
 1. Login to ERPNext.
 2. Go to **User List**.
-3. Create a dedicated user (recommended: NOT Administrator).
-4. Assign appropriate roles.
+3. Click on you username.
+4. Go to Settings and Look for **API Access** section.
 5. Click **Generate API Key & Secret**.
 6. Copy:
    - API Key
