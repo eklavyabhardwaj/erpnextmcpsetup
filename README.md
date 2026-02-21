@@ -223,7 +223,7 @@ curl https://yourerp.com/api/method/ping
 #  Project Structure
 
 ```
-Frappe_MCP/
+MCP_Server/
  └── erpnext-mcp-server/
      ├── build/
      │   └── index.js
