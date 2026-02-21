@@ -62,7 +62,7 @@ Expected response:
 ## 1. Clone MCP Server
 
 ```bash
-cd ~/Projects
+cd ~/MCP_Servers
 mkdir Frappe_MCP
 cd Frappe_MCP
 git clone https://github.com/rakeshgangwar/erpnext-mcp-server.git
