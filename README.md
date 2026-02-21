@@ -62,6 +62,7 @@ Expected response:
 ## 1. Clone MCP Server
 
 ```bash
+mkdir MCP_Servers
 cd ~/MCP_Servers
 mkdir Frappe_MCP
 cd Frappe_MCP
