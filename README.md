@@ -244,3 +244,77 @@ MCP_Server/
 
 ---
 
+
+
+
+
+## Data Flow Diagram
+
+```mermaid
+flowchart TD
+
+A[User on WhatsApp] --> B[WhatsApp Interface / Bot Gateway]
+
+B --> C[Assistant Orchestrator]
+C --> D[Claude LLM via OpenClaw]
+
+D --> E[MCP Tool Layer]
+
+E --> F1[ERP System]
+E --> F2[Email System]
+E --> F3[Document Generator]
+E --> F4[Business Logic / Analytics]
+
+F1 --> G[ERP Data / Transactions]
+F2 --> G
+F3 --> G
+F4 --> G
+
+G --> H[Response Formatter]
+
+H --> B
+B --> A
+
+%% Security Layer
+C --> I[User Credential Manager]
+I --> F1
+I --> F2
+
+%% Learning Layer
+D --> J[Session Memory / Learning Store]
+J --> D
+```
+
+## Flow Explanation
+
+1. **User Interaction**
+   - User sends a request through **WhatsApp**.
+
+2. **Interface Layer**
+   - WhatsApp bot receives the message and forwards it to the **Assistant Orchestrator**.
+
+3. **Reasoning Layer**
+   - The request is processed by **Claude via OpenClaw**, which determines intent and required actions.
+
+4. **Tool Execution via MCP**
+   - MCP connects the LLM to available tools:
+     - ERP queries
+     - Email retrieval
+     - Document generation
+     - Business analytics
+
+5. **Credential Control**
+   - Each session runs with **user-specific ERP credentials**, ensuring role-based access.
+
+6. **Execution**
+   - The system can:
+     - Query ERP
+     - Create sales orders / quotations
+     - Identify leads or opportunities
+     - Generate documents
+
+7. **Learning Layer**
+   - Insights and execution learnings are stored in **session memory**, allowing the assistant to improve future responses.
+
+8. **Response Delivery**
+   - Results are formatted and returned to the **user on WhatsApp**.
